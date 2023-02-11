@@ -1,0 +1,46 @@
+﻿@model MyTasks.Core.ViewModels.CategoriesViewModel
+
+<h1>Kategorie</h1>
+
+
+<a href="@Url.Action("Category", "Category")" class="btn btn-primary mt-2 mb-2">
+    Dodaj kategorię
+</a>
+
+<div>
+	@await Html.PartialAsync("_CategoriesTable.cshtml", Model.Categories)
+</div>
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        function deleteCategory(id, btn) {
+
+            if (!confirm("Czy na pewno chcesz usunąć zadanie?"))
+                return;
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Delete", "Category")",
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    if (data.success) {
+                        var row = btn.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+                    } else {
+                        alert(data.message)
+                    }
+                },
+                error: function (data) {
+                    alert(data.message)
+                },
+                dataType: "json"
+            });
+        }
+
+    </script>
+}
