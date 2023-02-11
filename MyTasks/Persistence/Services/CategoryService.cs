@@ -19,10 +19,10 @@ namespace MyTasks.Persistence.Services
             return _unitOfWork.Category.Get(id, userId);
         }
 
-		public IEnumerable<Category> Get(string userId)
-		{
-			return _unitOfWork.Category.Get(userId);
-		}
+		//public IEnumerable<Category> Get(string userId)
+		//{
+		//	return _unitOfWork.Category.Get(userId);
+		//}
 
 		public IEnumerable<Category> GetCategories(string userId)
 		{

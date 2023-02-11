@@ -31,17 +31,6 @@ namespace MyTasks.Controllers
 			return View(vm);
 		}
 
-		[HttpPost]
-		public IActionResult Categories(CategoriesViewModel viewModel)
-		//public IActionResult Categories()
-		{
-			var userId = User.GetUserId();
-
-			var categories = _categoryService.Get(userId);
-
-			return PartialView("_CategoriesTable", categories);
-		}
-
 		public IActionResult Category(int id = 0)
 		{
 			var userId = User.GetUserId();

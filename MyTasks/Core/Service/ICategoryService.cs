@@ -5,7 +5,7 @@ namespace MyTasks.Core.Service
 {
 	public interface ICategoryService
 	{
-		IEnumerable<Category> Get(string userId);
+		//IEnumerable<Category> Get(string userId);
 
 		IEnumerable<Category> GetCategories(string userId);
 

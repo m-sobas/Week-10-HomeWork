@@ -5,7 +5,7 @@ namespace MyTasks.Core.Repositories
 {
 	public interface ICategoryRepository
 	{
-		IEnumerable<Category> Get(string userId);
+		//IEnumerable<Category> Get(string userId);
 
 		IEnumerable<Category> GetCategories(string userId);
 

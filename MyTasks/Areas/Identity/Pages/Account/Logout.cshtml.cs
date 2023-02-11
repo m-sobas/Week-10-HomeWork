@@ -38,7 +38,7 @@ namespace MyTasks.Areas.Identity.Pages.Account
             else
             {
                 return RedirectToPage();
+            }
         }
-    }
     }
 }

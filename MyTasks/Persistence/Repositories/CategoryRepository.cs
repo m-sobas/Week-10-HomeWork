@@ -26,14 +26,14 @@ namespace MyTasks.Persistence.Repositories
             return category;
         }
 
-		public IEnumerable<Category> Get(string userId)
-		{
-			var category = _context.Categories
-				.Where(x => x.UserId == userId);
+		//public IEnumerable<Category> Get(string userId)
+		//{
+		//	var category = _context.Categories
+		//		.Where(x => x.UserId == userId);
 
-			return category.OrderBy(x => x.Name)
-				.ToList();
-		}
+		//	return category.OrderBy(x => x.Name)
+		//		.ToList();
+		//}
 
 		public IEnumerable<Category> GetCategories(string userId)
 		{
